@@ -9,10 +9,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import Modelo.Mutantes;
+
 public class SelecionarTuplas {
 	
-	public void testarMutantes(){
-		ArrayList<String> listaMutantes = new ArrayList<String>();
+	public ArrayList<Mutantes> buscarMutantes(){
+		ArrayList<Mutantes> listaMutantes = new ArrayList<Mutantes>();
 		Connection con_bdr = null;		
 		
 		try {
@@ -23,73 +25,97 @@ public class SelecionarTuplas {
 			
 			ResultSet rst_bdr = stm_bdr.executeQuery("Select * from mutantes where id_sqloriginal = " 
 					+ Main.idInstrucao);
-			int countRst=0;
-			
+			//int countRst=0;
 			while (rst_bdr.next()){
-				countRst++;
-				Main.registrarLog("SelecionarTuplas.java - testarMutantes() - entrou resultset "
-						+ countRst + " veses");
-				Main.idMutante = rst_bdr.getInt("id_sql");
-				String sql_mutante = rst_bdr.getString("sql");
-				listaMutantes.add(sql_mutante);
-			}
-			stm_bdrs.executeUpdate("insert into resultado (r_idexecucao, r_idsql, r_idsqlmutante) "
-					+ "values ("+ Main.idExperimento +", "+ Main.idInstrucao +", "+Main.idMutante+");");
-			stm_bdrs.executeUpdate("update execucao set e_idsql = "+ Main.idInstrucao);
-			
+				Mutantes mut = new Mutantes();
+				//countRst++;
+				//rst_bdr.getInt("");
+				Main.idMutante = rst_bdr.getInt("id_sqlmutante");
+				mut.setSqlMut(rst_bdr.getString("sql"));
+				stm_bdrs.executeUpdate("insert into resultado (r_idexecucao, r_idsqlmutante) "
+						+ "values ("+ Main.idExperimento +", " +Main.idMutante+");");	
+				
+				ResultSet rst = stm_bdrs.executeQuery("select LAST_INSERT_ID() as id_resultado from resultado;");
+				rst.next();
+				mut.setIdExecucao(rst.getInt(1));
+				listaMutantes.add(mut);
+				//Main.registrarLog("id Mutante: "+ Main.idMutante +"\n Sql: "+ mut.getSqlMut() + "\n id execucao: "+ mut.getIdExecucao());
+			}						
 			stm_bdr.close();
+			stm_bdrs.close();
 			con_bdr.close();
-			Main.registrarLog("SelecionarTuplas.java - testarMutantes() - fechou conexao");
+			Main.registrarLog("SelecionarTuplas.java - buscarMutantes()- fechou conexao");
 		} catch (ClassNotFoundException e) {
-			Main.registrarErro("SelecionarTuplas.java - testarMutantes() - Class con_bdr erro: " + e.getMessage());
+			Main.registrarErro("SelecionarTuplas.java - buscarMutantes() - Class con_bdr erro: " + e.getMessage());
 			System.exit(1);
 		} catch (SQLException e) {
-			Main.registrarErro("SelecionarTuplas.java - testarMutantes() - con_bdr erro:" + e.getMessage());
+			Main.registrarErro("SelecionarTuplas.java - buscarMutantes() - con_bdr erro:" + e.getMessage());
 			System.exit(1);
 		}
+		return listaMutantes;
+	}
+	public void obterResultado(ArrayList<Mutantes> listaMutantes){ 
 		
 		for(int i =0; i<listaMutantes.size(); i++){
 			Connection con_bdp = null;
-			Connection con_bdrs = null;
+			Connection con_bdr = null;
 			try {
 				Class.forName(Main.classe);
 				con_bdp = DriverManager.getConnection(Main.urlBDP, Main.username, Main.password);
-				con_bdrs = DriverManager.getConnection(Main.urlBDR, Main.username, Main.password);
+				con_bdr = DriverManager.getConnection(Main.urlBDR, Main.username, Main.password);
 				Statement stm_bdp = con_bdp.createStatement();
-				Statement stm_bdr = con_bdrs.createStatement();
+				Statement stm_bdr = con_bdr.createStatement();
 				
-				String sqlMutante = listaMutantes.get(i);
-				//String sqlM = sqlMutante + " into outfile '/tmp/mysql/mutante"+i+"';";
-				stm_bdp.setQueryTimeout(60);
+				String sqlMutante = listaMutantes.get(i).getSqlMut();
+				stm_bdp.setQueryTimeout(90);
+				//Main.registrarLog("sql mutante: "+ sqlMutante + "\nid experimento: "+ listaMutantes.get(i).getIdExecucao());
 				ResultSet rst_bdp= stm_bdp.executeQuery(sqlMutante);
 				
 				ResultSetMetaData rsmd = rst_bdp.getMetaData(); 
 				int countColunas = rsmd.getColumnCount();
-				for (int c=1; c<=countColunas; c++){
-					while (rst_bdp.next()){
-						String nomeColuna = rsmd.getColumnName(c).toUpperCase();
-						int idColuna = rst_bdp.getInt(c);
-						
-						stm_bdr.executeUpdate("update resultado set "+ nomeColuna +" = "+idColuna
-								+" where r_idexecucao ="+ Main.idExperimento +";");
+				String totalResult ="";
+				
+				ReduzirBanco rb = new ReduzirBanco();
+				if(!rst_bdp.next()){
+					stm_bdr.executeUpdate("update resultado set resultado = 'Resultado vazio' where id_resultado = "
+							+ listaMutantes.get(i).getIdExecucao() +";");
+					Main.registrarLog("Mutante_"+ i +": resultado vazio");
+				}else{
+					while (rst_bdp.next()){	
+						for (int c=1; c<=countColunas; c++){
+							String nomeColuna = rsmd.getColumnName(c).toUpperCase();
+							int idColuna = rst_bdp.getInt(c);
+							String resultado = nomeColuna+" = "+idColuna;
+							rb.inserirTupla(nomeColuna, idColuna);
+							totalResult = totalResult + resultado + "|";
+						}
 					}
+					stm_bdr.executeUpdate("update resultado set resultado = '" + totalResult 
+							+ "' where id_resultado = "+ listaMutantes.get(i).getIdExecucao() +";");
+					Main.registrarLog("Resultado mutante_"+ i +": "+totalResult);
 				}
-				con_bdrs.close();
+				con_bdr.close();
 				con_bdp.close();
 			} catch (ClassNotFoundException e) {
-				Main.registrarErro("SelecionarTuplas.java - testarMutantes - Classe con_bdp erro: " + e.getMessage());
+				Main.registrarErro("SelecionarTuplas.java - obterResultado() - Classe con_bdp erro: " + e.getMessage());
 				System.exit(1);
 			} catch (SQLException e) {
-				Main.registrarErro("SelecionarTuplas.java - testarMutantes - con_bdp erro: " + e.getMessage());
+				Main.registrarErro("SelecionarTuplas.java - obterResultado() - con_bdp erro: " + e.getMessage());
 				try {
-					con_bdrs.close();
+					Class.forName(Main.classe);
+					con_bdr = DriverManager.getConnection(Main.urlBDR, Main.username, Main.password);
+					Statement stm_bdr = con_bdr.createStatement();
+					stm_bdr.executeUpdate("update resultado set time_out = 1 where id_resultado = "+ listaMutantes.get(i).getIdExecucao() + ";");
+					stm_bdr.executeUpdate("update resultado set resultado = 'Resultado Vazio' where id_resultado = "+ listaMutantes.get(i).getIdExecucao() + ";");
+					Main.registrarLog("Mutante_"+ i +": Time Out");
+					con_bdr.close();
 					con_bdp.close();
-				} catch (SQLException e1) {
-					Main.registrarErro("SelecionarTuplas.java - testarMutantes - catch do con_bdp.close() erro:" + e1.getMessage());
+				} catch (SQLException | ClassNotFoundException e1) {
+					Main.registrarErro("SelecionarTuplas.java - obterResultado() - catch do con_bdp.close() erro:" + e1.getMessage());
 					System.exit(1);
 				}
 			}
 		}
-	}
-
+		//return listaResultados;
+	}	
 }

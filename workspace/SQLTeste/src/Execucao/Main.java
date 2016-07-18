@@ -3,6 +3,9 @@ package Execucao;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+
+import Modelo.Mutantes;
 
 public class Main extends Logs {
 	public static String urlBDP = "jdbc:mysql://localhost:3306/tpch";
@@ -19,7 +22,7 @@ public class Main extends Logs {
 	public static void main(String[] args) {
 		Main m = new Main();
 		
-		Main.arquivo = new File("/home/ludmila/workspace/SQLTeste/experimento.log");
+		Main.arquivo = new File("/home/ludmila/workspace/SQLTeste_L/experimento.log");
 		try {
 			Main.fr = new FileWriter(Main.arquivo);
 		} catch (IOException e) {
@@ -29,7 +32,10 @@ public class Main extends Logs {
 		m.registrarExecucao('i');
 		
 		SelecionarTuplas st = new SelecionarTuplas();
-		st.testarMutantes();
+		ArrayList<Mutantes> listaMutantes = st.buscarMutantes();
+		//ArrayList<String> listaResultado =	
+		st.obterResultado(listaMutantes);
+		//st.criarView(listaResultado);
 		
 		m.registrarExecucao('f');
 		try {

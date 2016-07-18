@@ -61,8 +61,8 @@ public class Logs {
 
 			if (inicio_fim == 'i') {
 				
-				String sqlExecI = "insert into execucao (e_idsql , data_inicio) values (" + Main.idInstrucao +",'"
-						+ new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()).toString() + "');";
+				String sqlExecI = "insert into execucao (e_idsql , data_inicio, observacao) values (" + Main.idInstrucao +",'"
+						+ new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()).toString() + "', 'execucao com time out 90s');";
 				Main.registrarLog(sqlExecI);
 				stm_bdr.executeUpdate(sqlExecI);
 				
