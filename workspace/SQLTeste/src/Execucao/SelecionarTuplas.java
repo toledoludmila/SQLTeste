@@ -25,15 +25,13 @@ public class SelecionarTuplas {
 			
 			ResultSet rst_bdr = stm_bdr.executeQuery("Select * from mutantes where id_sqloriginal = " 
 					+ Main.idInstrucao);
-			//int countRst=0;
+			
 			while (rst_bdr.next()){
 				Mutantes mut = new Mutantes();
-				//countRst++;
-				//rst_bdr.getInt("");
-				Main.idMutante = rst_bdr.getInt("id_sqlmutante");
+				mut.setIdMutante(rst_bdr.getInt("id_sqlmutante"));
 				mut.setSqlMut(rst_bdr.getString("sql"));
 				stm_bdrs.executeUpdate("insert into resultado (r_idexecucao, r_idsqlmutante) "
-						+ "values ("+ Main.idExperimento +", " +Main.idMutante+");");	
+						+ "values ("+ Main.idExperimento +", " + mut.getIdMutante() +");");	
 				
 				ResultSet rst = stm_bdrs.executeQuery("select LAST_INSERT_ID() as id_resultado from resultado;");
 				rst.next();
@@ -68,31 +66,45 @@ public class SelecionarTuplas {
 				
 				String sqlMutante = listaMutantes.get(i).getSqlMut();
 				stm_bdp.setQueryTimeout(90);
+				stm_bdp.executeQuery(sqlMutante);
 				//Main.registrarLog("sql mutante: "+ sqlMutante + "\nid experimento: "+ listaMutantes.get(i).getIdExecucao());
-				ResultSet rst_bdp= stm_bdp.executeQuery(sqlMutante);
+				ResultSet rst_bdp = stm_bdp.executeQuery(sqlMutante);
 				
 				ResultSetMetaData rsmd = rst_bdp.getMetaData(); 
 				int countColunas = rsmd.getColumnCount();
-				String totalResult ="";
-				
-				ReduzirBanco rb = new ReduzirBanco();
+				int linhas = 0;
+											
 				if(!rst_bdp.next()){
 					stm_bdr.executeUpdate("update resultado set resultado = 'Resultado vazio' where id_resultado = "
 							+ listaMutantes.get(i).getIdExecucao() +";");
 					Main.registrarLog("Mutante_"+ i +": resultado vazio");
 				}else{
 					while (rst_bdp.next()){	
+						String colunas = "";
+						String idColunas ="";
 						for (int c=1; c<=countColunas; c++){
 							String nomeColuna = rsmd.getColumnName(c).toUpperCase();
-							int idColuna = rst_bdp.getInt(c);
-							String resultado = nomeColuna+" = "+idColuna;
-							rb.inserirTupla(nomeColuna, idColuna);
-							totalResult = totalResult + resultado + "|";
+							int idTupla = rst_bdp.getInt(c);
+							
+							if(colunas == ""){
+								colunas = nomeColuna;
+								idColunas = idTupla+ "";
+							}else{
+								colunas = colunas + ", " + nomeColuna;
+								idColunas = idColunas + ", " + idTupla;
+							}
+							
 						}
+						linhas++;
+						String sql = "insert into chaves (mutante, linha, "
+								+ colunas + ") values ("+listaMutantes.get(i).getIdMutante() 
+								+", " + linhas + ", " + idColunas + ");";
+						stm_bdr.executeUpdate(sql);
 					}
-					stm_bdr.executeUpdate("update resultado set resultado = '" + totalResult 
-							+ "' where id_resultado = "+ listaMutantes.get(i).getIdExecucao() +";");
-					Main.registrarLog("Resultado mutante_"+ i +": "+totalResult);
+					stm_bdr.executeUpdate("update resultado set resultado = '"
+							+ linhas + "' where id_resultado = "+ listaMutantes.get(i).getIdExecucao() +";");
+					
+					Main.registrarLog("Resultado mutante_"+ i +" Total de linhas: "+ linhas);
 				}
 				con_bdr.close();
 				con_bdp.close();

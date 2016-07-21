@@ -2,9 +2,16 @@ package Modelo;
 
 public class Mutantes {
 	
+	public int idMutante;
 	public String sqlMut;
 	public int idExecucao;
-	
+		
+	public int getIdMutante() {
+		return idMutante;
+	}
+	public void setIdMutante(int idMutante) {
+		this.idMutante = idMutante;
+	}
 	public String getSqlMut() {
 		return sqlMut;
 	}

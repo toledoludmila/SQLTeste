@@ -16,13 +16,13 @@ public class Main extends Logs {
 	public static String password = "senha";
 	public static String classe = "com.mysql.jdbc.Driver";
 	public static int idInstrucao = 101;
-	public static int idMutante = 0;
+	//public static int idMutante = 0;
 	public static int idExperimento = 0;
 
 	public static void main(String[] args) {
 		Main m = new Main();
 		
-		Main.arquivo = new File("/home/ludmila/workspace/SQLTeste_L/experimento.log");
+		Main.arquivo = new File("/home/ludmila/workspace/SQLTeste/experimento.log");
 		try {
 			Main.fr = new FileWriter(Main.arquivo);
 		} catch (IOException e) {
@@ -33,8 +33,8 @@ public class Main extends Logs {
 		
 		SelecionarTuplas st = new SelecionarTuplas();
 		ArrayList<Mutantes> listaMutantes = st.buscarMutantes();
-		//ArrayList<String> listaResultado =	
-		st.obterResultado(listaMutantes);
+		//ArrayList<Identificadores> listaResultado =	
+				st.obterResultado(listaMutantes);
 		//st.criarView(listaResultado);
 		
 		m.registrarExecucao('f');
