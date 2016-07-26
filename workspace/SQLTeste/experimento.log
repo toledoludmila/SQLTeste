@@ -1,169 +1,173 @@
-[21/07/2016 16:27:17] insert into execucao (e_idsql , data_inicio, observacao) values (101,'21/07/2016 16:27:17', 'execucao com time out 90s');
-[21/07/2016 16:27:17] Logs.java - registrarExecucao() - Execuçao N: 1
-[21/07/2016 16:27:36] SelecionarTuplas.java - buscarMutantes()- fechou conexao
-[21/07/2016 16:27:51] Resultado mutante_0 Total de linhas: 459
-[21/07/2016 16:28:12] Resultado mutante_1 Total de linhas: 459
-[21/07/2016 16:28:32] Resultado mutante_2 Total de linhas: 459
-[21/07/2016 16:28:53] Resultado mutante_3 Total de linhas: 459
-[21/07/2016 16:29:13] Resultado mutante_4 Total de linhas: 459
-[21/07/2016 16:29:35] Resultado mutante_5 Total de linhas: 459
-[21/07/2016 16:29:55] Resultado mutante_6 Total de linhas: 459
-[21/07/2016 16:30:16] Resultado mutante_7 Total de linhas: 459
-[21/07/2016 16:30:31] Resultado mutante_8 Total de linhas: 459
-[21/07/2016 16:30:46] Resultado mutante_9 Total de linhas: 459
-[21/07/2016 16:31:01] Resultado mutante_10 Total de linhas: 459
-[21/07/2016 16:31:16] Resultado mutante_11 Total de linhas: 459
-[21/07/2016 16:31:31] Resultado mutante_12 Total de linhas: 459
-[21/07/2016 16:31:47] Resultado mutante_13 Total de linhas: 459
-[21/07/2016 16:32:02] Resultado mutante_14 Total de linhas: 459
-[21/07/2016 16:32:16] Resultado mutante_15 Total de linhas: 459
-[21/07/2016 16:32:32] Resultado mutante_16 Total de linhas: 459
-[21/07/2016 16:32:47] Resultado mutante_17 Total de linhas: 459
-[21/07/2016 16:33:02] Resultado mutante_18 Total de linhas: 459
-[21/07/2016 16:33:23] Resultado mutante_19 Total de linhas: 459
-[21/07/2016 16:33:43] Resultado mutante_20 Total de linhas: 459
-[21/07/2016 16:34:04] Resultado mutante_21 Total de linhas: 459
-[21/07/2016 16:34:24] Resultado mutante_22 Total de linhas: 459
-[21/07/2016 16:34:45] Resultado mutante_23 Total de linhas: 459
-[21/07/2016 16:35:02] Resultado mutante_24 Total de linhas: 459
-[21/07/2016 16:35:21] Resultado mutante_25 Total de linhas: 459
-[21/07/2016 16:35:37] Resultado mutante_26 Total de linhas: 459
-[21/07/2016 16:35:53] Resultado mutante_27 Total de linhas: 459
-[21/07/2016 16:36:09] Resultado mutante_28 Total de linhas: 459
-[21/07/2016 16:36:24] Resultado mutante_29 Total de linhas: 459
-[21/07/2016 16:36:40] Resultado mutante_30 Total de linhas: 459
-[21/07/2016 16:36:55] Resultado mutante_31 Total de linhas: 459
-[21/07/2016 16:37:10] Resultado mutante_32 Total de linhas: 459
-[21/07/2016 16:37:25] Resultado mutante_33 Total de linhas: 459
-[21/07/2016 16:37:40] Resultado mutante_34 Total de linhas: 459
-[21/07/2016 16:37:55] Resultado mutante_35 Total de linhas: 459
-[21/07/2016 16:38:10] Resultado mutante_36 Total de linhas: 459
-[21/07/2016 16:38:30] Resultado mutante_37 Total de linhas: 459
-[21/07/2016 16:38:51] Resultado mutante_38 Total de linhas: 459
-[21/07/2016 16:39:11] Resultado mutante_39 Total de linhas: 459
-[21/07/2016 16:39:32] Resultado mutante_40 Total de linhas: 459
-[21/07/2016 16:39:52] Resultado mutante_41 Total de linhas: 459
-[21/07/2016 16:40:07] Resultado mutante_42 Total de linhas: 459
-[21/07/2016 16:40:22] Resultado mutante_43 Total de linhas: 459
-[21/07/2016 16:40:37] Resultado mutante_44 Total de linhas: 459
-[21/07/2016 16:40:53] Resultado mutante_45 Total de linhas: 459
-[21/07/2016 16:41:08] Resultado mutante_46 Total de linhas: 459
-[21/07/2016 16:41:24] Resultado mutante_47 Total de linhas: 459
-[21/07/2016 16:41:39] Resultado mutante_48 Total de linhas: 459
-[21/07/2016 16:41:54] Resultado mutante_49 Total de linhas: 459
-[21/07/2016 16:42:09] Resultado mutante_50 Total de linhas: 459
-[21/07/2016 16:42:24] Resultado mutante_51 Total de linhas: 459
-[21/07/2016 16:42:40] Resultado mutante_52 Total de linhas: 459
-[21/07/2016 16:42:55] Resultado mutante_53 Total de linhas: 459
-[21/07/2016 16:43:10] Resultado mutante_54 Total de linhas: 459
-[21/07/2016 16:43:25] Resultado mutante_55 Total de linhas: 459
-[21/07/2016 16:43:45] Resultado mutante_56 Total de linhas: 459
-[21/07/2016 16:44:05] Resultado mutante_57 Total de linhas: 459
-[21/07/2016 16:44:26] Resultado mutante_58 Total de linhas: 459
-[21/07/2016 16:44:46] Resultado mutante_59 Total de linhas: 459
-[21/07/2016 16:45:07] Resultado mutante_60 Total de linhas: 459
-[21/07/2016 16:45:21] Resultado mutante_61 Total de linhas: 459
-[21/07/2016 16:45:37] Resultado mutante_62 Total de linhas: 459
-[21/07/2016 16:45:52] Resultado mutante_63 Total de linhas: 459
-[21/07/2016 16:46:07] Resultado mutante_64 Total de linhas: 459
-[21/07/2016 16:46:22] Resultado mutante_65 Total de linhas: 459
-[21/07/2016 16:46:37] Resultado mutante_66 Total de linhas: 459
-[21/07/2016 16:46:53] Resultado mutante_67 Total de linhas: 459
-[21/07/2016 16:47:08] Resultado mutante_68 Total de linhas: 459
-[21/07/2016 16:47:23] Resultado mutante_69 Total de linhas: 459
-[21/07/2016 16:47:38] Resultado mutante_70 Total de linhas: 459
-[21/07/2016 16:47:54] Resultado mutante_71 Total de linhas: 459
-[21/07/2016 16:48:08] Resultado mutante_72 Total de linhas: 459
-[21/07/2016 16:48:24] Resultado mutante_73 Total de linhas: 459
-[21/07/2016 16:48:45] Resultado mutante_74 Total de linhas: 459
-[21/07/2016 16:49:05] Resultado mutante_75 Total de linhas: 459
-[21/07/2016 16:49:26] Resultado mutante_76 Total de linhas: 459
-[21/07/2016 16:49:46] Resultado mutante_77 Total de linhas: 459
-[21/07/2016 16:50:06] Resultado mutante_78 Total de linhas: 459
-[21/07/2016 16:50:22] Resultado mutante_79 Total de linhas: 459
-[21/07/2016 16:50:36] Resultado mutante_80 Total de linhas: 459
-[21/07/2016 16:50:51] Resultado mutante_81 Total de linhas: 459
-[21/07/2016 16:51:06] Resultado mutante_82 Total de linhas: 459
-[21/07/2016 16:51:22] Resultado mutante_83 Total de linhas: 459
-[21/07/2016 16:51:36] Resultado mutante_84 Total de linhas: 459
-[21/07/2016 16:51:51] Resultado mutante_85 Total de linhas: 459
-[21/07/2016 16:52:07] Resultado mutante_86 Total de linhas: 459
-[21/07/2016 16:52:22] Resultado mutante_87 Total de linhas: 459
-[21/07/2016 16:52:37] Resultado mutante_88 Total de linhas: 459
-[21/07/2016 16:52:53] Resultado mutante_89 Total de linhas: 459
-[21/07/2016 16:53:08] Resultado mutante_90 Total de linhas: 459
-[21/07/2016 16:53:23] Resultado mutante_91 Total de linhas: 459
-[21/07/2016 16:53:38] Resultado mutante_92 Total de linhas: 459
-[21/07/2016 16:53:38] Mutante_93: resultado vazio
-[21/07/2016 16:53:39] Mutante_94: resultado vazio
-[21/07/2016 16:53:39] Mutante_95: resultado vazio
-[21/07/2016 16:53:39] Mutante_96: resultado vazio
-[21/07/2016 16:53:44] Mutante_97: resultado vazio
-[21/07/2016 16:53:47] Mutante_98: resultado vazio
-[21/07/2016 16:53:48] Mutante_99: resultado vazio
-[21/07/2016 16:53:48] Mutante_100: resultado vazio
-[21/07/2016 16:53:53] Mutante_101: resultado vazio
-[21/07/2016 16:53:53] Mutante_102: resultado vazio
-[21/07/2016 16:53:53] Mutante_103: resultado vazio
-[21/07/2016 16:53:54] Mutante_104: resultado vazio
-[21/07/2016 16:53:54] Mutante_105: resultado vazio
-[21/07/2016 16:53:54] Mutante_106: resultado vazio
-[21/07/2016 16:53:57] Mutante_107: resultado vazio
-[21/07/2016 16:53:57] Mutante_108: resultado vazio
-[21/07/2016 16:53:58] Mutante_109: resultado vazio
-[21/07/2016 16:55:28] *** ERRO *** SelecionarTuplas.java - obterResultado() - con_bdp erro: Statement cancelled due to timeout or client request
-[21/07/2016 16:55:28] Mutante_110: Time Out
-[21/07/2016 16:56:58] *** ERRO *** SelecionarTuplas.java - obterResultado() - con_bdp erro: Statement cancelled due to timeout or client request
-[21/07/2016 16:56:58] Mutante_111: Time Out
-[21/07/2016 16:58:28] *** ERRO *** SelecionarTuplas.java - obterResultado() - con_bdp erro: Statement cancelled due to timeout or client request
-[21/07/2016 16:58:28] Mutante_112: Time Out
-[21/07/2016 16:59:58] *** ERRO *** SelecionarTuplas.java - obterResultado() - con_bdp erro: Statement cancelled due to timeout or client request
-[21/07/2016 16:59:58] Mutante_113: Time Out
-[21/07/2016 17:01:28] *** ERRO *** SelecionarTuplas.java - obterResultado() - con_bdp erro: Statement cancelled due to timeout or client request
-[21/07/2016 17:01:28] Mutante_114: Time Out
-[21/07/2016 17:02:58] *** ERRO *** SelecionarTuplas.java - obterResultado() - con_bdp erro: Statement cancelled due to timeout or client request
-[21/07/2016 17:02:58] Mutante_115: Time Out
-[21/07/2016 17:02:58] Mutante_116: resultado vazio
-[21/07/2016 17:03:18] Resultado mutante_117 Total de linhas: 459
-[21/07/2016 17:03:22] Mutante_118: resultado vazio
-[21/07/2016 17:03:28] Mutante_119: resultado vazio
-[21/07/2016 17:03:34] Mutante_120: resultado vazio
-[21/07/2016 17:03:37] Mutante_121: resultado vazio
-[21/07/2016 17:03:37] Mutante_122: resultado vazio
-[21/07/2016 17:03:43] Mutante_123: resultado vazio
-[21/07/2016 17:03:43] Mutante_124: resultado vazio
-[21/07/2016 17:03:43] Mutante_125: resultado vazio
-[21/07/2016 17:03:43] Mutante_126: resultado vazio
-[21/07/2016 17:03:43] Mutante_127: resultado vazio
-[21/07/2016 17:03:43] Mutante_128: resultado vazio
-[21/07/2016 17:03:43] Mutante_129: resultado vazio
-[21/07/2016 17:03:43] Mutante_130: resultado vazio
-[21/07/2016 17:03:43] Mutante_131: resultado vazio
-[21/07/2016 17:03:47] Mutante_132: resultado vazio
-[21/07/2016 17:03:47] Mutante_133: resultado vazio
-[21/07/2016 17:03:50] Mutante_134: resultado vazio
-[21/07/2016 17:05:20] *** ERRO *** SelecionarTuplas.java - obterResultado() - con_bdp erro: Statement cancelled due to timeout or client request
-[21/07/2016 17:05:20] Mutante_135: Time Out
-[21/07/2016 17:06:50] *** ERRO *** SelecionarTuplas.java - obterResultado() - con_bdp erro: Statement cancelled due to timeout or client request
-[21/07/2016 17:06:50] Mutante_136: Time Out
-[21/07/2016 17:06:50] Mutante_137: resultado vazio
-[21/07/2016 17:08:20] *** ERRO *** SelecionarTuplas.java - obterResultado() - con_bdp erro: Statement cancelled due to timeout or client request
-[21/07/2016 17:08:21] Mutante_138: Time Out
-[21/07/2016 17:08:41] Resultado mutante_139 Total de linhas: 459
-[21/07/2016 17:08:41] Mutante_140: resultado vazio
-[21/07/2016 17:08:50] Resultado mutante_141 Total de linhas: 101
-[21/07/2016 17:08:59] Resultado mutante_142 Total de linhas: 90
-[21/07/2016 17:08:59] Mutante_143: resultado vazio
-[21/07/2016 17:09:00] Mutante_144: resultado vazio
-[21/07/2016 17:09:00] Mutante_145: resultado vazio
-[21/07/2016 17:09:00] Mutante_146: resultado vazio
-[21/07/2016 17:09:00] Mutante_147: resultado vazio
-[21/07/2016 17:09:00] Mutante_148: resultado vazio
-[21/07/2016 17:09:00] Mutante_149: resultado vazio
-[21/07/2016 17:09:00] Mutante_150: resultado vazio
-[21/07/2016 17:09:01] Mutante_151: resultado vazio
-[21/07/2016 17:09:01] Mutante_152: resultado vazio
-[21/07/2016 17:09:01] Mutante_153: resultado vazio
-[21/07/2016 17:09:01] Mutante_154: resultado vazio
-[21/07/2016 17:09:01] Mutante_155: resultado vazio
-[21/07/2016 17:09:05] Mutante_156: resultado vazio
+[25/07/2016 09:56:35] insert into execucao (e_idsql , data_inicio, observacao) values (101,'25/07/2016 09:56:35', 'execucao com time out 90s');
+[25/07/2016 09:56:35] Logs.java - registrarExecucao() - Execuçao N: 1
+[25/07/2016 09:56:54] SelecionarTuplas.java - buscarMutantes()- fechou conexao
+[25/07/2016 09:57:09] Resultado mutante_0 Total de linhas: 459
+[25/07/2016 09:57:24] Resultado mutante_1 Total de linhas: 459
+[25/07/2016 09:57:39] Resultado mutante_2 Total de linhas: 459
+[25/07/2016 09:57:54] Resultado mutante_3 Total de linhas: 459
+[25/07/2016 09:58:09] Resultado mutante_4 Total de linhas: 459
+[25/07/2016 09:58:24] Resultado mutante_5 Total de linhas: 459
+[25/07/2016 09:58:39] Resultado mutante_6 Total de linhas: 459
+[25/07/2016 09:58:54] Resultado mutante_7 Total de linhas: 459
+[25/07/2016 09:59:09] Resultado mutante_8 Total de linhas: 459
+[25/07/2016 09:59:25] Resultado mutante_9 Total de linhas: 459
+[25/07/2016 09:59:40] Resultado mutante_10 Total de linhas: 459
+[25/07/2016 09:59:55] Resultado mutante_11 Total de linhas: 459
+[25/07/2016 10:00:10] Resultado mutante_12 Total de linhas: 459
+[25/07/2016 10:00:25] Resultado mutante_13 Total de linhas: 459
+[25/07/2016 10:00:41] Resultado mutante_14 Total de linhas: 459
+[25/07/2016 10:00:56] Resultado mutante_15 Total de linhas: 459
+[25/07/2016 10:01:11] Resultado mutante_16 Total de linhas: 459
+[25/07/2016 10:01:25] Resultado mutante_17 Total de linhas: 459
+[25/07/2016 10:01:40] Resultado mutante_18 Total de linhas: 459
+[25/07/2016 10:01:55] Resultado mutante_19 Total de linhas: 459
+[25/07/2016 10:02:10] Resultado mutante_20 Total de linhas: 459
+[25/07/2016 10:02:25] Resultado mutante_21 Total de linhas: 459
+[25/07/2016 10:02:40] Resultado mutante_22 Total de linhas: 459
+[25/07/2016 10:02:55] Resultado mutante_23 Total de linhas: 459
+[25/07/2016 10:03:10] Resultado mutante_24 Total de linhas: 459
+[25/07/2016 10:03:24] Resultado mutante_25 Total de linhas: 459
+[25/07/2016 10:03:40] Resultado mutante_26 Total de linhas: 459
+[25/07/2016 10:03:54] Resultado mutante_27 Total de linhas: 459
+[25/07/2016 10:04:10] Resultado mutante_28 Total de linhas: 459
+[25/07/2016 10:04:24] Resultado mutante_29 Total de linhas: 459
+[25/07/2016 10:04:39] Resultado mutante_30 Total de linhas: 459
+[25/07/2016 10:04:54] Resultado mutante_31 Total de linhas: 459
+[25/07/2016 10:05:09] Resultado mutante_32 Total de linhas: 459
+[25/07/2016 10:05:25] Resultado mutante_33 Total de linhas: 459
+[25/07/2016 10:05:41] Resultado mutante_34 Total de linhas: 459
+[25/07/2016 10:05:59] Resultado mutante_35 Total de linhas: 459
+[25/07/2016 10:06:15] Resultado mutante_36 Total de linhas: 459
+[25/07/2016 10:06:30] Resultado mutante_37 Total de linhas: 459
+[25/07/2016 10:06:46] Resultado mutante_38 Total de linhas: 459
+[25/07/2016 10:07:01] Resultado mutante_39 Total de linhas: 459
+[25/07/2016 10:07:16] Resultado mutante_40 Total de linhas: 459
+[25/07/2016 10:07:31] Resultado mutante_41 Total de linhas: 459
+[25/07/2016 10:07:46] Resultado mutante_42 Total de linhas: 459
+[25/07/2016 10:08:01] Resultado mutante_43 Total de linhas: 459
+[25/07/2016 10:08:16] Resultado mutante_44 Total de linhas: 459
+[25/07/2016 10:08:31] Resultado mutante_45 Total de linhas: 459
+[25/07/2016 10:08:46] Resultado mutante_46 Total de linhas: 459
+[25/07/2016 10:09:01] Resultado mutante_47 Total de linhas: 459
+[25/07/2016 10:09:16] Resultado mutante_48 Total de linhas: 459
+[25/07/2016 10:09:31] Resultado mutante_49 Total de linhas: 459
+[25/07/2016 10:09:46] Resultado mutante_50 Total de linhas: 459
+[25/07/2016 10:10:01] Resultado mutante_51 Total de linhas: 459
+[25/07/2016 10:10:16] Resultado mutante_52 Total de linhas: 459
+[25/07/2016 10:10:31] Resultado mutante_53 Total de linhas: 459
+[25/07/2016 10:10:46] Resultado mutante_54 Total de linhas: 459
+[25/07/2016 10:11:02] Resultado mutante_55 Total de linhas: 459
+[25/07/2016 10:11:17] Resultado mutante_56 Total de linhas: 459
+[25/07/2016 10:11:32] Resultado mutante_57 Total de linhas: 459
+[25/07/2016 10:11:47] Resultado mutante_58 Total de linhas: 459
+[25/07/2016 10:12:03] Resultado mutante_59 Total de linhas: 459
+[25/07/2016 10:12:18] Resultado mutante_60 Total de linhas: 459
+[25/07/2016 10:12:33] Resultado mutante_61 Total de linhas: 459
+[25/07/2016 10:12:48] Resultado mutante_62 Total de linhas: 459
+[25/07/2016 10:13:03] Resultado mutante_63 Total de linhas: 459
+[25/07/2016 10:13:18] Resultado mutante_64 Total de linhas: 459
+[25/07/2016 10:13:33] Resultado mutante_65 Total de linhas: 459
+[25/07/2016 10:13:48] Resultado mutante_66 Total de linhas: 459
+[25/07/2016 10:14:03] Resultado mutante_67 Total de linhas: 459
+[25/07/2016 10:14:18] Resultado mutante_68 Total de linhas: 459
+[25/07/2016 10:14:33] Resultado mutante_69 Total de linhas: 459
+[25/07/2016 10:14:48] Resultado mutante_70 Total de linhas: 459
+[25/07/2016 10:15:03] Resultado mutante_71 Total de linhas: 459
+[25/07/2016 10:15:18] Resultado mutante_72 Total de linhas: 459
+[25/07/2016 10:15:33] Resultado mutante_73 Total de linhas: 459
+[25/07/2016 10:15:48] Resultado mutante_74 Total de linhas: 459
+[25/07/2016 10:16:03] Resultado mutante_75 Total de linhas: 459
+[25/07/2016 10:16:18] Resultado mutante_76 Total de linhas: 459
+[25/07/2016 10:16:34] Resultado mutante_77 Total de linhas: 459
+[25/07/2016 10:16:49] Resultado mutante_78 Total de linhas: 459
+[25/07/2016 10:17:05] Resultado mutante_79 Total de linhas: 459
+[25/07/2016 10:17:19] Resultado mutante_80 Total de linhas: 459
+[25/07/2016 10:17:35] Resultado mutante_81 Total de linhas: 459
+[25/07/2016 10:17:50] Resultado mutante_82 Total de linhas: 459
+[25/07/2016 10:18:06] Resultado mutante_83 Total de linhas: 459
+[25/07/2016 10:18:21] Resultado mutante_84 Total de linhas: 459
+[25/07/2016 10:18:35] Resultado mutante_85 Total de linhas: 459
+[25/07/2016 10:18:51] Resultado mutante_86 Total de linhas: 459
+[25/07/2016 10:19:06] Resultado mutante_87 Total de linhas: 459
+[25/07/2016 10:19:21] Resultado mutante_88 Total de linhas: 459
+[25/07/2016 10:19:36] Resultado mutante_89 Total de linhas: 459
+[25/07/2016 10:19:51] Resultado mutante_90 Total de linhas: 459
+[25/07/2016 10:20:06] Resultado mutante_91 Total de linhas: 459
+[25/07/2016 10:20:21] Resultado mutante_92 Total de linhas: 459
+[25/07/2016 10:20:21] Mutante_93: resultado vazio
+[25/07/2016 10:20:21] Mutante_94: resultado vazio
+[25/07/2016 10:20:21] Mutante_95: resultado vazio
+[25/07/2016 10:20:21] Mutante_96: resultado vazio
+[25/07/2016 10:20:21] Mutante_97: resultado vazio
+[25/07/2016 10:20:21] Mutante_98: resultado vazio
+[25/07/2016 10:20:22] Mutante_99: resultado vazio
+[25/07/2016 10:20:22] Mutante_100: resultado vazio
+[25/07/2016 10:20:22] Mutante_101: resultado vazio
+[25/07/2016 10:20:22] Mutante_102: resultado vazio
+[25/07/2016 10:20:22] Mutante_103: resultado vazio
+[25/07/2016 10:20:22] Mutante_104: resultado vazio
+[25/07/2016 10:20:22] Mutante_105: resultado vazio
+[25/07/2016 10:20:22] Mutante_106: resultado vazio
+[25/07/2016 10:20:22] Mutante_107: resultado vazio
+[25/07/2016 10:20:22] Mutante_108: resultado vazio
+[25/07/2016 10:20:22] Mutante_109: resultado vazio
+[25/07/2016 10:21:52] *** ERRO *** SelecionarTuplas.java - obterResultado() - con_bdp erro: Statement cancelled due to timeout or client request
+[25/07/2016 10:21:52] Mutante_110: Time Out
+[25/07/2016 10:23:22] *** ERRO *** SelecionarTuplas.java - obterResultado() - con_bdp erro: Statement cancelled due to timeout or client request
+[25/07/2016 10:23:22] Mutante_111: Time Out
+[25/07/2016 10:24:52] *** ERRO *** SelecionarTuplas.java - obterResultado() - con_bdp erro: Statement cancelled due to timeout or client request
+[25/07/2016 10:24:52] Mutante_112: Time Out
+[25/07/2016 10:26:23] *** ERRO *** SelecionarTuplas.java - obterResultado() - con_bdp erro: Statement cancelled due to timeout or client request
+[25/07/2016 10:26:23] Mutante_113: Time Out
+[25/07/2016 10:27:53] *** ERRO *** SelecionarTuplas.java - obterResultado() - con_bdp erro: Statement cancelled due to timeout or client request
+[25/07/2016 10:27:53] Mutante_114: Time Out
+[25/07/2016 10:29:23] *** ERRO *** SelecionarTuplas.java - obterResultado() - con_bdp erro: Statement cancelled due to timeout or client request
+[25/07/2016 10:29:23] Mutante_115: Time Out
+[25/07/2016 10:29:23] Mutante_116: resultado vazio
+[25/07/2016 10:29:37] Resultado mutante_117 Total de linhas: 459
+[25/07/2016 10:29:37] Mutante_118: resultado vazio
+[25/07/2016 10:29:37] Mutante_119: resultado vazio
+[25/07/2016 10:29:37] Mutante_120: resultado vazio
+[25/07/2016 10:29:37] Mutante_121: resultado vazio
+[25/07/2016 10:29:37] Mutante_122: resultado vazio
+[25/07/2016 10:29:37] Mutante_123: resultado vazio
+[25/07/2016 10:29:37] Mutante_124: resultado vazio
+[25/07/2016 10:29:37] Mutante_125: resultado vazio
+[25/07/2016 10:29:37] Mutante_126: resultado vazio
+[25/07/2016 10:29:37] Mutante_127: resultado vazio
+[25/07/2016 10:29:38] Mutante_128: resultado vazio
+[25/07/2016 10:29:38] Mutante_129: resultado vazio
+[25/07/2016 10:29:38] Mutante_130: resultado vazio
+[25/07/2016 10:29:38] Mutante_131: resultado vazio
+[25/07/2016 10:29:38] Mutante_132: resultado vazio
+[25/07/2016 10:29:38] Mutante_133: resultado vazio
+[25/07/2016 10:29:38] Mutante_134: resultado vazio
+[25/07/2016 10:31:08] *** ERRO *** SelecionarTuplas.java - obterResultado() - con_bdp erro: Statement cancelled due to timeout or client request
+[25/07/2016 10:31:08] Mutante_135: Time Out
+[25/07/2016 10:32:38] *** ERRO *** SelecionarTuplas.java - obterResultado() - con_bdp erro: Statement cancelled due to timeout or client request
+[25/07/2016 10:32:38] Mutante_136: Time Out
+[25/07/2016 10:32:38] Mutante_137: resultado vazio
+[25/07/2016 10:34:08] *** ERRO *** SelecionarTuplas.java - obterResultado() - con_bdp erro: Statement cancelled due to timeout or client request
+[25/07/2016 10:34:08] Mutante_138: Time Out
+[25/07/2016 10:34:23] Resultado mutante_139 Total de linhas: 459
+[25/07/2016 10:34:23] Mutante_140: resultado vazio
+[25/07/2016 10:34:26] Resultado mutante_141 Total de linhas: 101
+[25/07/2016 10:34:30] Resultado mutante_142 Total de linhas: 90
+[25/07/2016 10:34:30] Mutante_143: resultado vazio
+[25/07/2016 10:34:30] Mutante_144: resultado vazio
+[25/07/2016 10:34:30] Mutante_145: resultado vazio
+[25/07/2016 10:34:30] Mutante_146: resultado vazio
+[25/07/2016 10:34:30] Mutante_147: resultado vazio
+[25/07/2016 10:34:30] Mutante_148: resultado vazio
+[25/07/2016 10:34:30] Mutante_149: resultado vazio
+[25/07/2016 10:34:30] Mutante_150: resultado vazio
+[25/07/2016 10:34:30] Mutante_151: resultado vazio
+[25/07/2016 10:34:30] Mutante_152: resultado vazio
+[25/07/2016 10:34:30] Mutante_153: resultado vazio
+[25/07/2016 10:34:30] Mutante_154: resultado vazio
+[25/07/2016 10:34:30] Mutante_155: resultado vazio
+[25/07/2016 10:34:30] Mutante_156: resultado vazio
+[25/07/2016 19:20:14] Resultado mutante_157 Total de linhas: 913559
+[25/07/2016 23:51:19] Resultado mutante_158 Total de linhas: 483631
+[26/07/2016 03:51:19] Resultado mutante_159 Total de linhas: 429927
+[26/07/2016 08:23:46] Resultado mutante_160 Total de linhas: 484091

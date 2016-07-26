@@ -60,17 +60,16 @@ public class Logs {
 			Statement stm_bdr = con_bdr.createStatement();
 
 			if (inicio_fim == 'i') {
-				
-				String sqlExecI = "insert into execucao (e_idsql , data_inicio, observacao) values (" + Main.idInstrucao +",'"
-						+ new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()).toString() + "', 'execucao com time out 90s');";
+				String sqlExecI = "insert into execucao (e_idsql , data_inicio, observacao) values (" 
+						+ Main.idInstrucao +",'" + new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()).toString() 
+						+ "', 'execucao com time out 90s');";
 				Main.registrarLog(sqlExecI);
 				stm_bdr.executeUpdate(sqlExecI);
-				
-				ResultSet rst_bdr = stm_bdr.executeQuery
-						("SELECT LAST_INSERT_ID() as id_execucao from execucao;");
+				ResultSet rst_bdr = stm_bdr.executeQuery("SELECT LAST_INSERT_ID() as id_execucao from execucao;");
 				rst_bdr.next();
 				Main.idExperimento = rst_bdr.getInt(1);
-				Main.registrarLog("Logs.java - registrarExecucao() - Execuçao N: "+Main.idExperimento);
+				Main.registrarLog("Logs.java - registrarExecucao() - Execuçao N: "
+						+ Main.idExperimento);
 				
 			} else {
 				String sqlExecF = "update execucao set data_fim = '"

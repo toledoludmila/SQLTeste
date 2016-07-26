@@ -16,28 +16,27 @@ public class Main extends Logs {
 	public static String password = "senha";
 	public static String classe = "com.mysql.jdbc.Driver";
 	public static int idInstrucao = 101;
-	//public static int idMutante = 0;
 	public static int idExperimento = 0;
 
 	public static void main(String[] args) {
 		Main m = new Main();
-		
 		Main.arquivo = new File("/home/ludmila/workspace/SQLTeste/experimento.log");
+		
 		try {
 			Main.fr = new FileWriter(Main.arquivo);
 		} catch (IOException e) {
 			Main.registrarErro("Main.java - main() - " + e.getMessage());
 			System.exit(1);
 		}
+		
 		m.registrarExecucao('i');
 		
 		SelecionarTuplas st = new SelecionarTuplas();
 		ArrayList<Mutantes> listaMutantes = st.buscarMutantes();
-		//ArrayList<Identificadores> listaResultado =	
-				st.obterResultado(listaMutantes);
-		//st.criarView(listaResultado);
+		st.obterResultado(listaMutantes);
 		
 		m.registrarExecucao('f');
+		
 		try {
 			fr.close();
 		} catch (IOException e) {
@@ -45,5 +44,4 @@ public class Main extends Logs {
 			System.exit(1);
 		}
 	}
-
 }

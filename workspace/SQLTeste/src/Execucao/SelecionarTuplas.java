@@ -22,7 +22,6 @@ public class SelecionarTuplas {
 			con_bdr = DriverManager.getConnection(Main.urlBDR, Main.username, Main.password);
 			Statement stm_bdr = con_bdr.createStatement();
 			Statement stm_bdrs = con_bdr.createStatement();
-			
 			ResultSet rst_bdr = stm_bdr.executeQuery("Select * from mutantes where id_sqloriginal = " 
 					+ Main.idInstrucao);
 			
@@ -37,8 +36,8 @@ public class SelecionarTuplas {
 				rst.next();
 				mut.setIdExecucao(rst.getInt(1));
 				listaMutantes.add(mut);
-				//Main.registrarLog("id Mutante: "+ Main.idMutante +"\n Sql: "+ mut.getSqlMut() + "\n id execucao: "+ mut.getIdExecucao());
-			}						
+			}
+			
 			stm_bdr.close();
 			stm_bdrs.close();
 			con_bdr.close();
@@ -52,6 +51,7 @@ public class SelecionarTuplas {
 		}
 		return listaMutantes;
 	}
+	
 	public void obterResultado(ArrayList<Mutantes> listaMutantes){ 
 		
 		for(int i =0; i<listaMutantes.size(); i++){
@@ -66,8 +66,6 @@ public class SelecionarTuplas {
 				
 				String sqlMutante = listaMutantes.get(i).getSqlMut();
 				stm_bdp.setQueryTimeout(90);
-				stm_bdp.executeQuery(sqlMutante);
-				//Main.registrarLog("sql mutante: "+ sqlMutante + "\nid experimento: "+ listaMutantes.get(i).getIdExecucao());
 				ResultSet rst_bdp = stm_bdp.executeQuery(sqlMutante);
 				
 				ResultSetMetaData rsmd = rst_bdp.getMetaData(); 
@@ -93,7 +91,6 @@ public class SelecionarTuplas {
 								colunas = colunas + ", " + nomeColuna;
 								idColunas = idColunas + ", " + idTupla;
 							}
-							
 						}
 						linhas++;
 						String sql = "insert into chaves (mutante, linha, "
@@ -102,7 +99,7 @@ public class SelecionarTuplas {
 						stm_bdr.executeUpdate(sql);
 					}
 					stm_bdr.executeUpdate("update resultado set resultado = '"
-							+ linhas + "' where id_resultado = "+ listaMutantes.get(i).getIdExecucao() +";");
+							+ linhas + " linhas' where id_resultado = "+ listaMutantes.get(i).getIdExecucao() +";");
 					
 					Main.registrarLog("Resultado mutante_"+ i +" Total de linhas: "+ linhas);
 				}
@@ -128,6 +125,5 @@ public class SelecionarTuplas {
 				}
 			}
 		}
-		//return listaResultados;
 	}	
 }
