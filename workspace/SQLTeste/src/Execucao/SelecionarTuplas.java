@@ -142,9 +142,9 @@ public class SelecionarTuplas {
 				
 				if (linhas == 0) {
 					stm_bdr = con_bdr.prepareStatement(
-							"insert into resultado (r_idexecucao, r_idsqlmutante, resultado) "
+							"insert into resultado (r_idexecucao, r_idsqlmutante, time_out, resultado) "
 							+ "values (" + Main.idExperimento + ", " 
-							+ listaMutantes.get(i).getIdMutante() + ", 'Resultado vazio');");
+							+ listaMutantes.get(i).getIdMutante() + ", '0' , 'Resultado vazio');");
 					stm_bdr.executeUpdate();
 					con_bdr.commit();
 					stm_bdr.close();
@@ -155,9 +155,9 @@ public class SelecionarTuplas {
 						stm_bdr.close();
 					}
 					stm_bdr = con_bdr.prepareStatement(
-							"insert into resultado (r_idexecucao, r_idsqlmutante, resultado) "
+							"insert into resultado (r_idexecucao, r_idsqlmutante, time_out, resultado) "
 							+ "values (" + Main.idExperimento + ", " 
-							+ listaMutantes.get(i).getIdMutante() + ", '"
+							+ listaMutantes.get(i).getIdMutante() + ", '0' , '"
 							+ linhas + " linhas');");		
 					stm_bdr.executeUpdate();
 					con_bdr.commit();
@@ -176,15 +176,7 @@ public class SelecionarTuplas {
 					if (stm_bdr != null) {
 						stm_bdr.close();
 					}
-					
-					stm_bdr = con_bdr.prepareStatement(
-							"insert into resultado (r_idexecucao, r_idsqlmutante, time_out, resultado) "
-							+ "values (" + Main.idExperimento + ", " 
-							+ listaMutantes.get(i).getIdMutante() + ", '1', 'resultado vazio');");
-					stm_bdr.executeUpdate();
-					con_bdr.commit();
-					stm_bdr.close();
-					
+										
 					Logs.registrarLog("Mutante_" + listaMutantes.get(i).getIdMutante() + ": Time Out");
 				} catch (SQLException e1) {
 					Logs.registrarErro("SelecionarTuplas.java - obterResultado() - catch e1 - SQLException:" + e1.getMessage());
