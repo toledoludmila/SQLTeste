@@ -15,32 +15,32 @@ public class Main extends Logs {
 	public static String username = "root";
 	public static String password = "senha";
 	public static String classe = "com.mysql.jdbc.Driver";
-	public static int idInstrucao = 101;
+	public static int idInstrucao = 105;
 	public static int idExperimento = 0;
-
+	public static int idResultado = 0;
+	
 	public static void main(String[] args) {
-		Main m = new Main();
-		Main.arquivo = new File("/home/ludmila/workspace/SQLTeste/experimento.log");
+		Logs.arquivo = new File("/home/ludmila/workspace/SQLTeste/experimento.log");
 		
 		try {
-			Main.fr = new FileWriter(Main.arquivo);
+			Logs.fr = new FileWriter(Logs.arquivo);
 		} catch (IOException e) {
-			Main.registrarErro("Main.java - main() - " + e.getMessage());
+			Logs.registrarErro("Main.java - main() - " + e.getMessage());
 			System.exit(1);
 		}
 		
-		m.registrarExecucao('i');
+		Logs.registrarExecucao('i');
 		
 		SelecionarTuplas st = new SelecionarTuplas();
 		ArrayList<Mutantes> listaMutantes = st.buscarMutantes();
 		st.obterResultado(listaMutantes);
 		
-		m.registrarExecucao('f');
+		Logs.registrarExecucao('f');
 		
 		try {
-			fr.close();
+			Logs.fr.close();
 		} catch (IOException e) {
-			Main.registrarErro("Ag.java - main() - " + e.getMessage());
+			Logs.registrarErro("Main.java - main() - " + e.getMessage());
 			System.exit(1);
 		}
 	}

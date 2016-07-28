@@ -5,14 +5,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Logs {
-
 	public static File arquivo;
 	public static FileWriter fr;
 	
@@ -52,37 +51,45 @@ public class Logs {
 		}
 	}
 	
-	public void registrarExecucao(char inicio_fim) {
-		
+	public static void registrarExecucao(char inicio_fim) {
 		Connection con_bdr = null;
+		PreparedStatement stm_bdr = null;
+		
 		try {
 			con_bdr = DriverManager.getConnection(Main.urlBDR, Main.username, Main.password);
-			Statement stm_bdr = con_bdr.createStatement();
+			con_bdr.setAutoCommit(false);
 
 			if (inicio_fim == 'i') {
 				String sqlExecI = "insert into execucao (e_idsql , data_inicio, observacao) values (" 
 						+ Main.idInstrucao +",'" + new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()).toString() 
 						+ "', 'execucao com time out 90s');";
-				Main.registrarLog(sqlExecI);
-				stm_bdr.executeUpdate(sqlExecI);
-				ResultSet rst_bdr = stm_bdr.executeQuery("SELECT LAST_INSERT_ID() as id_execucao from execucao;");
+				registrarLog(sqlExecI);
+				stm_bdr = con_bdr.prepareStatement(sqlExecI);
+				stm_bdr.executeUpdate();
+				con_bdr.commit();
+				stm_bdr.close();
+				
+				stm_bdr = con_bdr.prepareStatement("SELECT LAST_INSERT_ID() as id_execucao from execucao;");
+				ResultSet rst_bdr = stm_bdr.executeQuery();
 				rst_bdr.next();
 				Main.idExperimento = rst_bdr.getInt(1);
-				Main.registrarLog("Logs.java - registrarExecucao() - Execuçao N: "
+				stm_bdr.close();
+				registrarLog("Logs.java - registrarExecucao() - Execuçao N: "
 						+ Main.idExperimento);
-				
 			} else {
 				String sqlExecF = "update execucao set data_fim = '"
 						+ new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()).toString()
 						+ "' where id_execucao = " + Main.idExperimento + ";";
-				stm_bdr.executeUpdate(sqlExecF);
-				Main.registrarLog(sqlExecF);
+				registrarLog(sqlExecF);
+				stm_bdr = con_bdr.prepareStatement(sqlExecF);
+				stm_bdr.executeUpdate();
+				con_bdr.commit();
+				stm_bdr.close();
 			}
 
-			stm_bdr.close();
 			con_bdr.close();
 		} catch (SQLException e) {
-			Main.registrarErro("Logs.java - registrarExecucao() -"+ e.getMessage());
+			registrarErro("Logs.java - registrarExecucao() -"+ e.getMessage());
 			System.exit(1);
 		}
 	}
